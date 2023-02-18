@@ -20,8 +20,12 @@ namespace AddressContainer{
         this.zip= zip;
         this.phonenumber = phonenumber;
         this.email=email;
-        Console.WriteLine("The object created with Name of {0}",firstname);
     }
+    public override string ToString()
+{
+    return $"{firstname} {lastname}, {address}, {city}, {state} {zip}, {phonenumber}, {email}";
+}
+
 
 }
 }
