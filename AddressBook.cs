@@ -23,6 +23,16 @@ namespace AddressBookContainer{
             addresses.Add(newAddress);
             
         }
+        public void EditUser(string name,Address updatedAddress ){
+            Address obj =addresses.FirstOrDefault(x=>x.firstname == name);
+            if(obj != null){
+            int index =addresses.IndexOf(obj);
+          
+            addresses[index] = updatedAddress;
+            }else{
+                Console.WriteLine("No object found on this name");
+            }
+        }
 
 
     }
