@@ -33,6 +33,15 @@ namespace AddressBookContainer{
                 Console.WriteLine("No object found on this name");
             }
         }
+        public void deleteUser(string username){
+            Address obj = addresses.FirstOrDefault(name=>name.firstname == username);
+            if (obj != null){
+                addresses.Remove(obj);
+            }
+            else{
+                Console.WriteLine("user Not Found");
+            }
+        }
 
 
     }

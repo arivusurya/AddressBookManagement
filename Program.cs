@@ -55,7 +55,9 @@ namespace AddressManagement{
                     PersonalDetails();
                     addressBook.EditUser(name,address);
                 }else if(option == "Delete User " | option == "3" | option == "deleteuser"){
-                    Console.WriteLine("Delete User");
+                    Console.WriteLine("Enter the Name");
+                    string Name = Console.ReadLine();
+                    addressBook.deleteUser(Name);
                 }else{
                     Console.WriteLine("Enter the right Option ");
                 }
