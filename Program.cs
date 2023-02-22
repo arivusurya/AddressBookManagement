@@ -5,12 +5,13 @@ using System.Collections.Generic;
 namespace AddressManagement{
 
     class Program{
+            public static Dictionary<string, AddressBook> AddressBooks { get; set; } = new Dictionary<string, AddressBook>();
        
         public static void Main(string[] args){
+            
             AddressBook addressBook = new AddressBook();
             Address address;
           
-
             while(true){
                 Options();
                 addressBook.DisplayAlluser();
@@ -44,6 +45,7 @@ namespace AddressManagement{
                 Console.WriteLine("1. Add User" );
                 Console.WriteLine("2. Edit User" );
                 Console.WriteLine("3. Delete User" );
+                Console.WriteLine("4: CREATE NEW ADDRESSBOOK");
                 string option  = Console.ReadLine();
                 if (option == "Add User" | option == "1" | option == "adduser"){
                     PersonalDetails();
@@ -58,12 +60,18 @@ namespace AddressManagement{
                     Console.WriteLine("Enter the Name");
                     string Name = Console.ReadLine();
                     addressBook.deleteUser(Name);
+                }else if(option == "4" | option == "create addressbook" | option == "CREATE NEW ADDRESSBOOK" ){
+                     Console.Write("Enter the Name of the book");
+                     string name = Console.ReadLine();
+                     AddressBooks[name] = new AddressBook();
+
+
                 }else{
                     Console.WriteLine("Enter the right Option ");
                 }
 
             }
-            // addressBook.Adduser(address);
+            
             
         }
     }
